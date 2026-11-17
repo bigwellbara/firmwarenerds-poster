@@ -49,9 +49,7 @@ PAGE = """<!doctype html>
 <footer class="site-footer">
   <div class="wrap">
     <span>© FirmwareNerds · Harare, Zimbabwe</span>
-    <span><a href="./">Home</a> · <a data-whatsapp-help href="#" target="_blank" rel="noopener">WhatsApp</a></span>
-    <span class="credits">Photo by Vitaly Gariev on Unsplash.</span>
-  </div>
+    <span><a href="./">Home</a> · <a data-whatsapp-help href="#" target="_blank" rel="noopener">WhatsApp</a></span>  </div>
 </footer>
 <script src="config.js"></script>
 <script src="assets/site.js"></script>
