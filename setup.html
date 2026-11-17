@@ -31,7 +31,7 @@
   </div>
   <section>
     <div class="wrap guide">
-<p>Thank you for buying FirmwareNerds Poster. Once it's set up, it writes and publishes one tech post a day on <strong>your</strong> LinkedIn profile, at 07:00 Harare time. It runs on your own free GitHub account and uses your own free Gemini and LinkedIn keys. Nobody else, including FirmwareNerds, ever sees your passwords or keys.</p>
+<p>Thank you for buying FirmwareNerds Poster. Once it's set up, it writes and publishes one post a day about <strong>your field</strong> on <strong>your</strong> LinkedIn profile, at 07:00 Harare time. It works for any field: tech, farming, property, finance, health, marketing, education and more. It runs on your own free GitHub account and uses your own free Gemini and LinkedIn keys. Nobody else, including FirmwareNerds, ever sees your passwords or keys.</p>
 <p>Setup takes about 30 minutes. Follow the steps in order. Need help? Contact FirmwareNerds on WhatsApp; the number is on the <a href="./">product page</a>.</p>
 <h2>What it posts</h2>
 <table>
@@ -44,15 +44,15 @@
 <tbody>
 <tr>
 <td>Monday</td>
-<td>Tech news roundup (3 stories from Hacker News)</td>
+<td>News roundup: 3 recent stories from your field and why they matter</td>
 </tr>
 <tr>
 <td>Tuesday</td>
-<td>One tech concept explained simply, with an everyday analogy</td>
+<td>One concept from your field explained simply, with an everyday analogy</td>
 </tr>
 <tr>
 <td>Wednesday</td>
-<td>One practical developer tip</td>
+<td>One practical tip people in your field can use the same day</td>
 </tr>
 <tr>
 <td>Thursday</td>
@@ -60,7 +60,7 @@
 </tr>
 <tr>
 <td>Friday</td>
-<td>A question about a real tech debate, to get comments</td>
+<td>A question about a real debate in your field, to get comments</td>
 </tr>
 <tr>
 <td>Saturday</td>
@@ -68,11 +68,19 @@
 </tr>
 <tr>
 <td>Sunday</td>
-<td>A career or mindset lesson from an African builder's point of view</td>
+<td>A career or mindset lesson from your own perspective</td>
 </tr>
 </tbody>
 </table>
 <p>Every post is 900–1,300 characters, opens with a hook, ends with a question and has 3–5 hashtags. It never repeats a topic from your last 14 posts.</p>
+<p><strong>Your field</strong> comes from the <code>AUTHOR_NICHE</code> setting (step 4). If you leave it empty, the posts are about technology.</p>
+<h3>Where the news comes from</h3>
+<ul>
+<li><strong>With a field set:</strong> recent stories found by Google News searches for your field, plus Reuters stories on the same topic. Put your country in the field (for example <code>real estate in Zimbabwe</code>) to get local news.</li>
+<li><strong>Without a field (tech):</strong> TechCrunch, Wired, CNET, The Verge, Ars Technica, Reuters technology and Hacker News.</li>
+<li><strong>Any extra feeds you like:</strong> add RSS feed links in the <code>EXTRA_FEEDS</code> setting (step 4).</li>
+</ul>
+<p>The posts only state what the headlines say, and never invent facts.</p>
 <p><strong>What it costs to run:</strong> nothing. Each run takes about one minute of the 2,000 free GitHub Actions minutes a month, and Gemini and LinkedIn are free.</p>
 <hr />
 <h2>Step 1. Get your own copy</h2>
@@ -155,11 +163,11 @@
 <tbody>
 <tr>
 <td><code>AUTHOR_BIO</code></td>
-<td><strong>Required.</strong> One sentence describing you. The posts are written in this voice. Example: <code>A data analyst in Bulawayo who loves Python and teaching beginners.</code></td>
+<td><strong>Required.</strong> One sentence describing you. The posts are written in this voice. Example: <code>An estate agent in Harare who helps families buy their first home.</code></td>
 </tr>
 <tr>
 <td><code>AUTHOR_NICHE</code></td>
-<td><strong>Recommended.</strong> Your field, so your posts are about what your audience cares about and differ from other people using this agent. Examples: <code>fintech and mobile money</code>, <code>cybersecurity</code>, <code>data analytics and Excel</code>, <code>web development</code>.</td>
+<td><strong>Recommended.</strong> Your field. Every post and every news story follows it, so your posts are about what your audience cares about. Add your country for local news. Examples: <code>real estate in Zimbabwe</code>, <code>agriculture and farming</code>, <code>fintech and mobile money</code>, <code>accounting and tax</code>, <code>cybersecurity</code>. Leave it empty for technology posts.</td>
 </tr>
 </tbody>
 </table>
@@ -198,8 +206,13 @@
 </tr>
 <tr>
 <td><code>AUTHOR_NICHE</code></td>
-<td>(none: general tech)</td>
-<td>Your field. Every topic and news pick follows it.</td>
+<td>(none: technology)</td>
+<td>Your field. Every topic and news story follows it.</td>
+</tr>
+<tr>
+<td><code>EXTRA_FEEDS</code></td>
+<td>(none)</td>
+<td>Extra news sources: RSS feed links, separated by spaces or commas.</td>
 </tr>
 <tr>
 <td><code>GEMINI_MODEL</code></td>
