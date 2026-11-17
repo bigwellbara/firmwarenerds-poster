@@ -5,22 +5,21 @@
 window.FNP_CONFIG = {
   currency: "USD",
 
-  // One-off prices.
+  // One-off prices. Keep whole dollars: they dial cleanly in the USSD code.
   prices: {
-    diy: 0,     // TODO: "Do it yourself" price
-    setup: 0,   // TODO: "Setup with me" price
+    diy: 5,     // "Do it yourself"
+    setup: 10,  // "Setup with me"
   },
 
   // EcoCash wallet that receives payments.
-  ecocashNumber: "07XXXXXXXX",          // TODO: e.g. 0771234567
-  ecocashName: "YOUR REGISTERED NAME",  // TODO: the name EcoCash shows the payer
+  ecocashNumber: "0779787091",
+  ecocashName: "Bigwell Baramasimbe",   // the name EcoCash shows the payer
 
   // WhatsApp number for proof of payment, international format, no + or spaces.
-  whatsappNumber: "2637XXXXXXXX",       // TODO: e.g. 263771234567
+  whatsappNumber: "263779787091",
 
-  // Send-money USSD code. {number} and {amount} are filled in automatically.
-  // TODO: confirm this exact code works on your phone for the wallet you use.
-  ussdTemplate: "*151*1*1*{number}*{amount}#",
+  // EcoCash USD send-money code. {number} and {amount} are filled in automatically.
+  ussdTemplate: "*153*1*1*{number}*{amount}#",
 
   // A real post published by the agent (shown as proof on the page).
   examplePostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7528401878389493761/",
