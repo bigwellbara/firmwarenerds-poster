@@ -7,7 +7,7 @@
   <meta name="description" content="Show up on LinkedIn every morning without writing a word. FirmwareNerds Poster writes and publishes one post a day in your voice. Pay once with EcoCash.">
   <meta property="og:title" content="FirmwareNerds Poster: show up on LinkedIn every morning">
   <meta property="og:description" content="Writes and publishes one LinkedIn post a day in your voice. Built in Harare. Pay once with EcoCash.">
-  <meta property="og:image" content="https://bigwellbara.github.io/firmwarenerds-poster/assets/img/hero-harare.jpg">
+  <meta property="og:image" content="https://bigwellbara.github.io/firmwarenerds-poster/assets/img/galaxy.jpg">
   <meta name="theme-color" content="#1f2328">
   <link rel="icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,8 +30,12 @@
 
 <main>
   <section class="hero">
-    <div class="wrap">
-      <h1>Show up on LinkedIn every morning. <em>Without writing a word.</em></h1>
+    <div class="hero-sky" aria-hidden="true">
+      <img class="galaxy" src="assets/img/galaxy.jpg" alt="">
+      <canvas class="stars"></canvas>
+    </div>
+    <div class="wrap hero-content">
+      <h1 class="hero-title">Show up on LinkedIn every morning. <em class="shimmer">Without writing a word.</em></h1>
       <p class="lead">FirmwareNerds Poster writes one thoughtful post in your voice and publishes it on your LinkedIn profile at 07:00, every day. Pay once with EcoCash, and it runs free after that.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#pricing">See prices</a>
@@ -266,5 +270,6 @@
 
 <script src="config.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/sky.js"></script>
 </body>
 </html>

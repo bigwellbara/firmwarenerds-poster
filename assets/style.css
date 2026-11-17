@@ -67,16 +67,73 @@ p { margin: 0 0 14px; }
 .btn-block { width: 100%; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 
-/* Hero: Harare at night */
+/* Hero: animated galaxy */
 .hero {
-  position: relative; color: #fff; padding: 110px 0 120px;
-  background:
-    linear-gradient(100deg, rgba(20, 22, 26, .92) 0%, rgba(20, 22, 26, .78) 45%, rgba(20, 22, 26, .35) 100%),
-    url("img/hero-harare.jpg") center 60% / cover no-repeat;
+  position: relative; overflow: hidden; color: #fff; padding: 120px 0 132px;
+  background: radial-gradient(ellipse at 78% 45%, #0f1830 0%, #070a13 55%, #03050a 100%);
+}
+.hero-sky { position: absolute; inset: 0; pointer-events: none; }
+.hero-sky::after {           /* keeps the text side readable */
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(3, 5, 10, .88) 0%, rgba(3, 5, 10, .6) 42%, rgba(3, 5, 10, 0) 78%);
+}
+.galaxy {
+  position: absolute; top: 50%; right: -10%; width: min(980px, 82vw); max-width: none;
+  transform: translateY(-50%);
+  -webkit-mask-image: radial-gradient(circle at center, #000 38%, transparent 70%);
+          mask-image: radial-gradient(circle at center, #000 38%, transparent 70%);
+  animation: galaxy-drift 70s ease-in-out infinite alternate;
+}
+@keyframes galaxy-drift {
+  from { transform: translateY(-50%) scale(1) rotate(0deg); }
+  to   { transform: translateY(-52%) scale(1.14) rotate(8deg); }
+}
+.stars { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-content { position: relative; z-index: 2; }
+@media (max-width: 760px) {
+  .galaxy { right: -50%; top: 42%; width: 150vw; opacity: .95; }
+  .hero-sky::after { background: linear-gradient(180deg, rgba(3, 5, 10, .25) 0%, rgba(3, 5, 10, .55) 45%, rgba(3, 5, 10, .75) 100%); }
 }
 .hero .lead { color: rgba(255, 255, 255, .86); }
 .hero h1 { max-width: 760px; }
 .hero h1 em { font-style: normal; color: var(--gold); }
+
+/* Hero text animation */
+.word { display: inline-block; opacity: 0; transform: translateY(18px); filter: blur(6px);
+  animation: rise .7s cubic-bezier(.2, .7, .2, 1) forwards; animation-delay: calc(var(--i) * 75ms + 150ms); }
+@keyframes rise { to { opacity: 1; transform: none; filter: none; } }
+.shimmer {
+  display: inline-block; opacity: 0;
+  background: linear-gradient(100deg, var(--gold) 0%, var(--gold) 35%, #fff4cc 50%, var(--gold) 65%, var(--gold) 100%);
+  background-size: 260% 100%; -webkit-background-clip: text; background-clip: text; color: transparent !important;
+  animation: rise .9s cubic-bezier(.2, .7, .2, 1) .75s forwards, shimmer 5s linear 1.6s infinite;
+}
+@keyframes shimmer { from { background-position: 100% 0; } to { background-position: -160% 0; } }
+.hero .lead, .hero .actions, .hero .hero-points { opacity: 0; animation: rise .8s ease forwards; }
+.hero .lead { animation-delay: 1.1s; }
+.hero .actions { animation-delay: 1.3s; }
+.hero .hero-points { animation-delay: 1.5s; }
+.hero .btn-primary { animation: glow 2.8s ease-in-out 2.4s infinite; }
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(227, 160, 8, .55); }
+  50%      { box-shadow: 0 0 0 10px rgba(227, 160, 8, 0); }
+}
+
+/* Safety net: after the intro, text is always visible even if an animation didn't run */
+.hero-done .word, .hero-done .shimmer, .hero-done .lead, .hero-done .actions, .hero-done .hero-points {
+  opacity: 1 !important; transform: none !important; filter: none !important;
+}
+
+/* Fade-up as sections scroll into view (only when JS is running) */
+.js-anim .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .2, 1); }
+.js-anim .reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .galaxy, .word, .shimmer, .hero .lead, .hero .actions, .hero .hero-points, .hero .btn-primary { animation: none !important; }
+  .word, .hero .lead, .hero .actions, .hero .hero-points { opacity: 1; transform: none; filter: none; }
+  .shimmer { opacity: 1; background: none; color: var(--gold) !important; }
+  .js-anim .reveal { opacity: 1; transform: none; transition: none; }
+}
 .hero-points { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; padding: 0; list-style: none; color: rgba(255, 255, 255, .85); font-size: .95rem; }
 .hero-points li::before { content: "●"; color: var(--gold); margin-right: 8px; font-size: .7em; vertical-align: middle; }
 
