@@ -31,7 +31,7 @@
   </div>
   <section>
     <div class="wrap guide">
-<p>Thank you for buying FirmwareNerds Poster. Once it's set up, it writes and publishes one post a day about <strong>your field</strong> on <strong>your</strong> LinkedIn profile, at 07:00 Harare time. It works for any field: tech, farming, property, finance, health, marketing, education and more. It runs on your own free GitHub account and uses your own free Gemini and LinkedIn keys. Nobody else, including FirmwareNerds, ever sees your passwords or keys.</p>
+<p>Thank you for buying FirmwareNerds Poster. Once it's set up, it writes and publishes one post a day about <strong>your field</strong> on <strong>your</strong> LinkedIn profile every morning, from about 06:30 Harare time. It works for any field: tech, farming, property, finance, health, marketing, education and more. It runs on your own free GitHub account and uses your own free Gemini and LinkedIn keys. Nobody else, including FirmwareNerds, ever sees your passwords or keys.</p>
 <p>Setup takes about 30 minutes. Follow the steps in order. Need help? Contact FirmwareNerds on WhatsApp; the number is on the <a href="./">product page</a>.</p>
 <h2>What it posts</h2>
 <table>
@@ -184,7 +184,7 @@
 <li><code>LinkedIn author: urn:li:person:...</code>, which means your LinkedIn token works.</li>
 </ul>
 <h2>Step 6. Go live</h2>
-<p>You don't need to do anything else: <strong>from tomorrow, a post is published every day at 07:00 Harare time.</strong> To post straight away, run the workflow again with <strong>Dry run</strong> unticked.</p>
+<p>You don't need to do anything else: <strong>from tomorrow, a post is published every morning, from about 06:30 Harare time.</strong> To post straight away, run the workflow again with <strong>Dry run</strong> unticked.</p>
 <p>It never posts more than once a day. To pause it, go to <strong>Actions → Daily LinkedIn Post → ⋯ → Disable workflow</strong>.</p>
 <h2>Step 7. Renew your LinkedIn token every 60 days</h2>
 <p>LinkedIn tokens expire after about <strong>60 days</strong>. When yours expires, the daily run fails and GitHub emails you. To fix it, repeat <strong>step 3d</strong> and paste the new token into the <code>LINKEDIN_ACCESS_TOKEN</code> secret (step 4). <strong>Set a calendar reminder for 55 days from today.</strong></p>
@@ -262,8 +262,8 @@
 <td>Set the <code>AUTHOR_BIO</code> variable (step 4).</td>
 </tr>
 <tr>
-<td>No post at exactly 07:00</td>
-<td>GitHub sometimes starts scheduled runs late, by up to an hour.</td>
+<td>No post by 06:30</td>
+<td>GitHub sometimes starts scheduled runs late or skips one. Backup runs at 08:23 and 10:23 Harare time post instead.</td>
 </tr>
 <tr>
 <td>Push fails with <code>403</code></td>
