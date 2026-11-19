@@ -17,11 +17,23 @@
 </head>
 <body>
 
+<div class="topbar">
+  <div class="wrap">
+    <span class="topbar-item"><span class="dot"></span> Built at FirmwareNerds</span>
+    <span class="topbar-item hide-sm">Posts go out every morning at 06:15</span>
+    <span class="topbar-right">
+      <span class="topbar-item hide-md">Replies on WhatsApp within a day</span>
+      <a class="topbar-item" data-whatsapp-help href="#" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg> <span data-whatsapp-display></span></a>
+    </span>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="./"><img src="assets/logo.png" alt=""> FirmwareNerds Poster</a>
     <nav class="nav">
       <a href="#how" class="hide-sm">How it works</a>
+      <a href="#example" class="hide-sm">Examples</a>
       <a href="setup.html" class="hide-sm">Setup guide</a>
       <a href="#pricing" class="nav-cta">Prices</a>
     </nav>
@@ -34,18 +46,55 @@
       <img class="galaxy" src="assets/img/galaxy.jpg" alt="">
       <canvas class="stars"></canvas>
     </div>
-    <div class="wrap hero-content">
-      <h1 class="hero-title">Show up on LinkedIn every morning. <em class="shimmer">Without writing a word.</em></h1>
-      <p class="lead">FirmwareNerds Poster writes one thoughtful post in your voice and publishes it on your LinkedIn profile every morning. Pay once with EcoCash, and it runs free after that.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#pricing">See prices</a>
-        <a class="btn btn-outline" href="#example">Read a real post</a>
+    <div class="wrap hero-content hero-grid">
+      <div>
+        <span class="pill"><span class="dot"></span> LinkedIn on autopilot · for any profession</span>
+        <h1 class="hero-title">Show up on LinkedIn every morning. <em class="shimmer">Without writing a word.</em></h1>
+        <p class="lead">FirmwareNerds Poster writes one thoughtful post about your field, in your voice, and publishes it on your LinkedIn profile every morning. Pay once with EcoCash, and it runs free after that.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#pricing">See prices</a>
+          <a class="btn btn-outline btn-wa" data-whatsapp-help href="#" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg> WhatsApp me</a>
+        </div>
+        <ul class="hero-points">
+          <li>One-off payment from <span data-price="diy"></span></li>
+          <li>Runs free on your own GitHub</li>
+          <li>Your keys stay yours</li>
+        </ul>
       </div>
-      <ul class="hero-points">
-        <li>One-off payment from <span data-price="diy"></span></li>
-        <li>Runs free on your own GitHub</li>
-        <li>Built at FirmwareNerds</li>
-      </ul>
+
+      <div class="mock" aria-hidden="true">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-status"><span>06:15</span><span>●●● ▮</span></div>
+            <div class="phone-bar"><span class="phone-logo">in</span> Home</div>
+            <div class="feed-card">
+              <div class="feed-head">
+                <span class="feed-avatar">YOU</span>
+                <div><b>Your name</b><small>Farmer · Mashonaland · just now</small></div>
+              </div>
+              <p class="feed-hook">Clean your tractor fuel filters before every major planting push.</p>
+              <p>Waiting until a tractor sputters in the middle of a ploughed field wastes precious daylight…</p>
+              <p class="feed-tags">#farming #agriculture #farmlife</p>
+              <div class="feed-actions"><span>Like</span><span>Comment</span><span>Repost</span><span>Send</span></div>
+            </div>
+            <div class="feed-card feed-ghost"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="chip chip-1"><span class="chip-icon ok">✓</span><div><b>Posted at 06:15</b><small>while you slept</small></div></div>
+        <div class="chip chip-2"><span class="chip-icon gold">◆</span><div><b>Your field: Farming</b><small>news, tips &amp; tools to match</small></div></div>
+        <div class="chip chip-3"><span class="chip-icon blue">≡</span><div><b>News from</b><small>Reuters · Google News</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-wrap" aria-label="Key facts">
+    <div class="wrap">
+      <div class="stats">
+        <div><b>06:15</b><span>a fresh post every morning</span></div>
+        <div><b>7</b><span>kinds of post each week</span></div>
+        <div><b>7+</b><span>trusted news sources</span></div>
+        <div><b>$0</b><span>to run, after a one-off <span data-price="diy"></span></span></div>
+      </div>
     </div>
   </section>
 
@@ -53,32 +102,85 @@
     <div class="wrap split">
       <div>
         <div class="rule"></div>
-        <h2>A real post, written and published by the agent</h2>
-        <p class="lead">Nobody edited this. The agent chose the topic, wrote the post and published it on a real profile. Your posts follow your own field and your own voice.</p>
-        <p><a data-example-post href="#" target="_blank" rel="noopener">See it on LinkedIn →</a></p>
+        <h2>See what it writes</h2>
+        <p class="lead">Same agent, three different people. Each one sets their field and a one-line bio, and every post follows it.</p>
+        <div class="tabs" role="tablist" aria-label="Example posts">
+          <button class="tab active" role="tab" aria-selected="true" data-tab="eng">Software engineer</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="farm">Farmer</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="estate">Estate agent</button>
+        </div>
+        <p class="tab-note" data-note="eng">A real post, published on LinkedIn on Tuesday 17 November 2026. <a data-example-post href="#" target="_blank" rel="noopener">See it on LinkedIn →</a></p>
+        <p class="tab-note" data-note="farm" hidden>A sample draft from a test run on 17 November 2026, written for a farmer with the field "agriculture and farming".</p>
+        <p class="tab-note" data-note="estate" hidden>A sample draft from a test run on 17 November 2026, using real Zimbabwe property headlines from that day.</p>
       </div>
-      <article class="post" aria-label="A real post published by the agent">
-        <div class="post-head">
-          <img class="post-avatar" src="assets/logo.png" alt="">
-          <div>
-            <div class="post-name">Published by FirmwareNerds Poster</div>
-            <div class="post-meta">Tuesday 17 Nov 2026 · written and posted automatically</div>
+
+      <div class="posts">
+        <article class="post" data-panel="eng">
+          <div class="post-head">
+            <span class="post-avatar initials">SE</span>
+            <div><div class="post-name">Software engineer, Harare</div><div class="post-meta">Real post · written and published automatically</div></div>
           </div>
-        </div>
-        <div class="post-body">
-          <p><b>Ever tried buying bread in Harare during a rush hour?</b></p>
-          <p>Imagine running to the corner tuckshop every single time someone asks you for the time, or the bread price. You would waste half your day walking back and forth and your legs would give up by noon.</p>
-          <p>That is why smart shop owners keep a small chalkboard right by the window with the current prices written on it. People walking past just glance at the board instead of knocking on the door and asking the shopkeeper directly.</p>
-          <p>In software, we call this caching, and it saves our servers from getting exhausted by the exact same questions over and over again.</p>
-          <p>How do you usually explain technical concepts to non-technical friends?</p>
-          <p class="post-tags">#SoftwareEngineering #TechConcepts #Coding #ZimbabweTech</p>
-        </div>
-        <div class="post-foot"><a data-example-post href="#" target="_blank" rel="noopener">View the original on LinkedIn</a></div>
-      </article>
+          <div class="post-body">
+            <p><b>Ever tried buying bread in Harare during a rush hour?</b></p>
+            <p>Imagine running to the corner tuckshop every single time someone asks you for the time, or the bread price. You would waste half your day walking back and forth and your legs would give up by noon.</p>
+            <p>That is why smart shop owners keep a small chalkboard right by the window with the current prices written on it. People walking past just glance at the board instead of knocking on the door and asking the shopkeeper directly.</p>
+            <p>In software, we call this caching, and it saves our servers from getting exhausted by the exact same questions over and over again.</p>
+            <p>How do you usually explain technical concepts to non-technical friends?</p>
+            <p class="post-tags">#SoftwareEngineering #TechConcepts #Coding #ZimbabweTech</p>
+          </div>
+        </article>
+
+        <article class="post" data-panel="farm" hidden>
+          <div class="post-head">
+            <span class="post-avatar initials">FM</span>
+            <div><div class="post-name">Commercial farmer, Mashonaland</div><div class="post-meta">Sample draft · Wednesday: practical tip</div></div>
+          </div>
+          <div class="post-body">
+            <p><b>Clean your tractor fuel filters before every major planting push.</b></p>
+            <p>Waiting until a tractor sputters in the middle of a dry ploughed field wastes precious daylight and delays your whole schedule.</p>
+            <p>Sediment and water love to hide in diesel storage drums, and they always find their way into your machine at the worst possible moment.</p>
+            <p>Take ten minutes every single morning during the busy season to drain the water separator and check the primary filter element. Keep spare filters and the right wrenches in the service bakkie.</p>
+            <p>The payoff is simple: zero unexpected breakdowns when the soil moisture is right and every single hour truly counts.</p>
+            <p>How often do you check your fuel filters when the pressure is on?</p>
+            <p class="post-tags">#farming #tractor #agriculture #mashonaland #farmlife</p>
+          </div>
+        </article>
+
+        <article class="post" data-panel="estate" hidden>
+          <div class="post-head">
+            <span class="post-avatar initials">EA</span>
+            <div><div class="post-name">Estate agent, Harare</div><div class="post-meta">Sample draft · Monday: news roundup</div></div>
+          </div>
+          <div class="post-body">
+            <p><b>Three property news updates every Harare agent needs to know right now.</b></p>
+            <p>First, the government has ordered all ninety-two local councils across the country to suspend demolitions immediately to protect citizens. In my view, this brings much-needed relief to families worried about their properties.</p>
+            <p>Second, a court has ruled in favour of a mining pension fund in a hotel share dispute. Clear legal protections remain vital for large property investments in this market.</p>
+            <p>Third, public hearings on the Mines Bill have officially begun. Any changes to mining laws could influence local development and housing demand near mining towns.</p>
+            <p>Which of these updates will impact your property plans the most this month?</p>
+            <p class="post-tags">#ZimbabweRealEstate #HarareProperty #PropertyNews</p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section id="how">
+  <section class="dots">
+    <div class="wrap">
+      <div class="center">
+        <div class="rule"></div>
+        <h2>Made for any profession</h2>
+        <p class="lead">Set your field once. Every post, tip, tool and news story follows it.</p>
+      </div>
+      <div class="tags">
+        <span>Software developers</span><span>Estate agents</span><span>Farmers &amp; agronomists</span>
+        <span>Accountants</span><span>Marketers</span><span>Doctors &amp; nurses</span>
+        <span>Teachers &amp; lecturers</span><span>Lawyers</span><span>Engineers</span>
+        <span>NGO &amp; development workers</span><span>Entrepreneurs</span><span>Students &amp; graduates</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="dots">
     <div class="wrap split">
       <div class="photo"><img src="assets/img/how-it-works.jpg" alt="A gold satellite orbiting above the Earth" loading="lazy"></div>
       <div>

@@ -20,6 +20,26 @@
   document.querySelectorAll("[data-ecocash-name]").forEach(function (el) { el.textContent = C.ecocashName; });
   document.querySelectorAll("[data-ecocash-number]").forEach(function (el) { el.textContent = C.ecocashNumber; });
   document.querySelectorAll("[data-example-post]").forEach(function (el) { el.href = C.examplePostUrl; });
+  // "263779787091" -> "+263 77 978 7091"
+  var wa = String(C.whatsappNumber);
+  var waPretty = wa.length === 12 ? "+" + wa.slice(0, 3) + " " + wa.slice(3, 5) + " " + wa.slice(5, 8) + " " + wa.slice(8) : "+" + wa;
+  document.querySelectorAll("[data-whatsapp-display]").forEach(function (el) { el.textContent = waPretty; });
+
+  // Example-post tabs
+  var tabs = document.querySelectorAll(".tab[data-tab]");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      var key = tab.getAttribute("data-tab");
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll("[data-panel]").forEach(function (p) { p.hidden = p.getAttribute("data-panel") !== key; });
+      document.querySelectorAll("[data-note]").forEach(function (n) { n.hidden = n.getAttribute("data-note") !== key; });
+    });
+  });
+
   document.querySelectorAll("[data-whatsapp-help]").forEach(function (el) {
     el.href = "https://wa.me/" + C.whatsappNumber + "?text=" +
       encodeURIComponent("Hi FirmwareNerds, I have a question about FirmwareNerds Poster: ");
