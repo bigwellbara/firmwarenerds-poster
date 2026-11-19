@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Setup Guide · FirmwareNerds Poster</title>
-  <meta name="description" content="Step-by-step setup guide for FirmwareNerds Poster, the daily LinkedIn post agent.">
+  <meta name="description" content="A preview of the setup guide for FirmwareNerds Poster, the daily LinkedIn post agent.">
   <meta name="theme-color" content="#1f2328">
   <link rel="icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,12 +26,12 @@
   <div class="guide-hero">
     <div class="wrap">
       <h1>Setup guide</h1>
-      <p>Everything you need to get FirmwareNerds Poster posting on your LinkedIn profile, step by step. It takes about 30 minutes.</p>
+      <p>A preview of the step-by-step guide. Buyers get the full guide with their copy. Setup takes about 30 minutes.</p>
     </div>
   </div>
   <section>
     <div class="wrap guide">
-<p>Thank you for buying FirmwareNerds Poster. Once it's set up, it writes and publishes one post a day about <strong>your field</strong> on <strong>your</strong> LinkedIn profile every morning, from about 06:30 Harare time. It works for any field: tech, farming, property, finance, health, marketing, education and more. It runs on your own free GitHub account and uses your own free Gemini and LinkedIn keys. Nobody else, including FirmwareNerds, ever sees your passwords or keys.</p>
+<p>Once it's set up, FirmwareNerds Poster writes and publishes one post a day about <strong>your field</strong> on <strong>your</strong> LinkedIn profile every morning, from about 06:30 Harare time. It works for any field: tech, farming, property, finance, health, marketing, education and more. It runs on your own free GitHub account and uses your own free Gemini and LinkedIn keys. Nobody else, including FirmwareNerds, ever sees your passwords or keys.</p>
 <p>Setup takes about 30 minutes. Follow the steps in order. Need help? Contact FirmwareNerds on WhatsApp; the number is on the <a href="./">product page</a>.</p>
 <h2>What it posts</h2>
 <table>
@@ -96,192 +96,31 @@
 </li>
 <li>Click <strong>Create repository</strong>. From now on, work only in <strong>your</strong> new repository.</li>
 </ol>
-<h2>Step 2. Get a free Gemini API key</h2>
-<ol>
-<li>Go to <strong>https://aistudio.google.com/apikey</strong> and sign in with a Google account.</li>
-<li>Click <strong>Create API key</strong>, then choose or create a project. No billing is needed.</li>
-<li>Copy the key.</li>
-</ol>
-<h2>Step 3. Set up LinkedIn</h2>
-<h3>3a. Create a LinkedIn Company Page (if you don't have one)</h3>
-<p>LinkedIn requires every developer app to be linked to a Company Page. Your posts still go to your <strong>personal</strong> profile.</p>
-<ol>
-<li>On LinkedIn, click <strong>For Business → Create a Company Page</strong>.</li>
-<li>Fill in a name (your brand or "YourName Dev"), a unique address, your website if you have one, and an industry (click it in the dropdown). Choose size <strong>0-1 employees</strong> and type <strong>Self-employed</strong>.</li>
-<li>Tick the confirmation box and click <strong>Create page</strong>.</li>
-</ol>
-<h3>3b. Create the LinkedIn app</h3>
-<ol>
-<li>Go to <strong>https://www.linkedin.com/developers/apps</strong> and click <strong>Create app</strong>.</li>
-<li>Enter an app name, for example <code>My Daily Poster</code>. Choose your Company Page in <strong>LinkedIn Page</strong>, upload any square logo, tick the agreement and click <strong>Create app</strong>.</li>
-<li>If the <strong>Settings</strong> tab shows <strong>Verify</strong>, click it and approve it as the page admin.</li>
-</ol>
-<h3>3c. Add two products</h3>
-<p>On the app's <strong>Products</strong> tab, click <strong>Request access</strong> on:</p>
-<ol>
-<li><strong>Share on LinkedIn</strong></li>
-<li><strong>Sign In with LinkedIn using OpenID Connect</strong></li>
-</ol>
-<p>Ignore every other product.</p>
-<h3>3d. Generate your token</h3>
-<ol>
-<li>Go to <strong>https://www.linkedin.com/developers/tools/oauth/token-generator</strong> and select your app.</li>
-<li>Tick <strong>openid</strong>, <strong>profile</strong> and <strong>w_member_social</strong>.</li>
-<li>Click <strong>Request access token</strong>, sign in, and click <strong>Allow</strong>.</li>
-<li>Copy the <strong>access token</strong>.</li>
-</ol>
-<p>If it complains about the redirect URL: on the app's <strong>Auth</strong> tab, add <code>https://www.linkedin.com/developers/tools/oauth/redirect</code> under <strong>Authorized redirect URLs</strong>, then try again.</p>
-<h2>Step 4. Add your keys and your bio to GitHub</h2>
-<p>In <strong>your</strong> repository, go to <strong>Settings → Secrets and variables → Actions</strong>.</p>
-<p><strong>Secrets</strong> tab → <strong>New repository secret</strong>, twice:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GEMINI_API_KEY</code></td>
-<td>Your Gemini key from step 2</td>
-</tr>
-<tr>
-<td><code>LINKEDIN_ACCESS_TOKEN</code></td>
-<td>Your LinkedIn token from step 3d</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variables</strong> tab → <strong>New repository variable</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AUTHOR_BIO</code></td>
-<td><strong>Required.</strong> One sentence describing you. The posts are written in this voice. Example: <code>An estate agent in Harare who helps families buy their first home.</code></td>
-</tr>
-<tr>
-<td><code>AUTHOR_NICHE</code></td>
-<td><strong>Recommended.</strong> Your field. Every post and every news story follows it, so your posts are about what your audience cares about. Add your country for local news. Examples: <code>real estate in Zimbabwe</code>, <code>agriculture and farming</code>, <code>fintech and mobile money</code>, <code>accounting and tax</code>, <code>cybersecurity</code>. Leave it empty for technology posts.</td>
-</tr>
-</tbody>
-</table>
-<p>If you skip <code>AUTHOR_BIO</code>, the posts describe a senior software engineer in Harare, which is probably not you.</p>
-<h2>Step 5. Test it (nothing is posted)</h2>
-<ol>
-<li>Open the <strong>Actions</strong> tab. If GitHub asks, click <strong>I understand my workflows, go ahead and enable them</strong>.</li>
-<li>Click <strong>Daily LinkedIn Post</strong> on the left, then <strong>Run workflow</strong>. Leave <strong>Dry run</strong> ticked and click the green <strong>Run workflow</strong> button.</li>
-<li>When it finishes (about 1–2 minutes), click the run. The draft post is shown in the <strong>Summary</strong>.</li>
-</ol>
-<p>In the run's log, check for:</p>
-<ul>
-<li><code>Writing as:</code> followed by <strong>your</strong> bio, and <code>Niche:</code> followed by your field;</li>
-<li><code>LinkedIn author: urn:li:person:...</code>, which means your LinkedIn token works.</li>
-</ul>
-<h2>Step 6. Go live</h2>
-<p>You don't need to do anything else: <strong>from tomorrow, a post is published every morning, from about 06:30 Harare time.</strong> To post straight away, run the workflow again with <strong>Dry run</strong> unticked.</p>
-<p>It never posts more than once a day. To pause it, go to <strong>Actions → Daily LinkedIn Post → ⋯ → Disable workflow</strong>.</p>
-<h2>Step 7. Renew your LinkedIn token every 60 days</h2>
-<p>LinkedIn tokens expire after about <strong>60 days</strong>. When yours expires, the daily run fails and GitHub emails you. To fix it, repeat <strong>step 3d</strong> and paste the new token into the <code>LINKEDIN_ACCESS_TOKEN</code> secret (step 4). <strong>Set a calendar reminder for 55 days from today.</strong></p>
-<hr />
-<h2>Optional settings (Variables tab)</h2>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Default</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AUTHOR_BIO</code></td>
-<td>Harare senior software engineer</td>
-<td>Who the posts are written as. Set this.</td>
-</tr>
-<tr>
-<td><code>AUTHOR_NICHE</code></td>
-<td>(none: technology)</td>
-<td>Your field. Every topic and news story follows it.</td>
-</tr>
-<tr>
-<td><code>EXTRA_FEEDS</code></td>
-<td>(none)</td>
-<td>Extra news sources: RSS feed links, separated by spaces or commas.</td>
-</tr>
-<tr>
-<td><code>GEMINI_MODEL</code></td>
-<td><code>gemini-flash-lite-latest</code></td>
-<td>Main Gemini model.</td>
-</tr>
-<tr>
-<td><code>GEMINI_FALLBACK_MODEL</code></td>
-<td><code>gemini-flash-latest</code></td>
-<td>Used if the main model fails.</td>
-</tr>
-<tr>
-<td><code>LINKEDIN_VERSION</code></td>
-<td><code>202610</code></td>
-<td>LinkedIn API version. The agent tries newer months automatically if this one is retired.</td>
-</tr>
-</tbody>
-</table>
-<p>To change the posting time, edit the <code>cron</code> line in <code>.github/workflows/daily-post.yml</code>. It's in UTC, so Harare time minus 2 hours.</p>
-<h2>Troubleshooting</h2>
-<table>
-<thead>
-<tr>
-<th>What you see</th>
-<th>Fix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>LinkedIn <code>HTTP 401</code></td>
-<td>The token expired or was pasted wrongly. Repeat step 3d and update the secret.</td>
-</tr>
-<tr>
-<td>LinkedIn <code>HTTP 403</code></td>
-<td>The token is missing a scope, or a product wasn't added. Check steps 3c and 3d.</td>
-</tr>
-<tr>
-<td>Gemini <code>API key not valid</code></td>
-<td>Create a new key (step 2) and update <code>GEMINI_API_KEY</code>.</td>
-</tr>
-<tr>
-<td>Gemini <code>429</code> or <code>503</code></td>
-<td>Google is busy or you hit the free limit. The agent retries and switches model automatically; if it still fails, it tries again tomorrow.</td>
-</tr>
-<tr>
-<td><code>Writing as:</code> shows the wrong person</td>
-<td>Set the <code>AUTHOR_BIO</code> variable (step 4).</td>
-</tr>
-<tr>
-<td>No post by 06:30</td>
-<td>GitHub sometimes starts scheduled runs late or skips one. Backup runs at 08:23 and 10:23 Harare time post instead.</td>
-</tr>
-<tr>
-<td>Push fails with <code>403</code></td>
-<td><strong>Settings → Actions → General → Workflow permissions →</strong> select <strong>Read and write permissions</strong>.</td>
-</tr>
-</tbody>
-</table>
-<h2>Privacy</h2>
-<p>On Google's free tier, prompts sent to Gemini may be used by Google and read by reviewers. The agent only sends public news headlines, your bio and your past public posts. <strong>Never put private, client or company information in your bio or settings.</strong></p>
-<h2>Licence</h2>
-<p>This copy is for your own LinkedIn account. Please don't share or resell it.</p>
+
+<div class="locked">
+  <div class="locked-preview" aria-hidden="true">
+    <h2>Step 2. Get a free Gemini API key</h2><div class="ph"><span style="width:96%"></span><span style="width:88%"></span><span style="width:92%"></span><span style="width:70%"></span></div><h2>Step 3. Set up LinkedIn</h2><div class="ph"><span style="width:88%"></span><span style="width:92%"></span><span style="width:70%"></span><span style="width:84%"></span></div><h2>Step 4. Add your keys and your bio to GitHub</h2><div class="ph"><span style="width:92%"></span><span style="width:70%"></span><span style="width:84%"></span><span style="width:60%"></span></div><h2>Step 5. Test it (nothing is posted)</h2><div class="ph"><span style="width:70%"></span><span style="width:84%"></span><span style="width:60%"></span><span style="width:96%"></span></div><h2>Step 6. Go live</h2><div class="ph"><span style="width:84%"></span><span style="width:60%"></span><span style="width:96%"></span><span style="width:88%"></span></div><h2>Step 7. Renew your LinkedIn token every 60 days</h2><div class="ph"><span style="width:60%"></span><span style="width:96%"></span><span style="width:88%"></span><span style="width:92%"></span></div><h2>Optional settings (Variables tab)</h2><div class="ph"><span style="width:96%"></span><span style="width:88%"></span><span style="width:92%"></span><span style="width:70%"></span></div><h2>Troubleshooting</h2><div class="ph"><span style="width:88%"></span><span style="width:92%"></span><span style="width:70%"></span><span style="width:84%"></span></div><h2>Privacy</h2><div class="ph"><span style="width:92%"></span><span style="width:70%"></span><span style="width:84%"></span><span style="width:60%"></span></div><h2>Licence</h2><div class="ph"><span style="width:70%"></span><span style="width:84%"></span><span style="width:60%"></span><span style="width:96%"></span></div>
+  </div>
+  <div class="locked-overlay">
+    <div class="locked-card">
+      <a class="lock" href="./#pay" aria-label="The rest of the guide is for buyers. See how to pay.">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Zm3 3.5a1.75 1.75 0 0 1 1 3.2V19h-2v-2.3a1.75 1.75 0 0 1 1-3.2Z"/></svg>
+        <span class="lock-tip">Unlock the full guide → <u>See how to pay</u></span>
+      </a>
+      <h3>The rest of the guide is for buyers</h3>
+      <p>6 more steps cover your free Gemini key, your LinkedIn app and token, your settings, testing and going live. You get the full guide, and your own copy of the agent, as soon as your payment is confirmed.</p>
+      <a class="btn btn-primary" href="./#pay">See how to pay</a>
+    </div>
+  </div>
+</div>
     </div>
   </section>
 </main>
 <footer class="site-footer">
   <div class="wrap">
     <span>© FirmwareNerds · Harare, Zimbabwe</span>
-    <span><a href="./">Home</a> · <a data-whatsapp-help href="#" target="_blank" rel="noopener">WhatsApp</a></span>  </div>
+    <span><a href="./">Home</a> · <a data-whatsapp-help href="#" target="_blank" rel="noopener">WhatsApp</a></span>
+  </div>
 </footer>
 <script src="config.js"></script>
 <script src="assets/site.js"></script>
